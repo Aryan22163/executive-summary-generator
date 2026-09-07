@@ -52,6 +52,20 @@ Consolidating redundant G&A software licenses and eliminating 4 overlapping regi
     }
   };
 
+  // --- Dynamic Backend URL Resolution (Supports Render & Local Dev) ---
+  function getBackendUrl() {
+    // If running on a dedicated local frontend dev server (e.g. port 3030 or 5500), point to local FastAPI port 8000
+    if (window.location.port === '3030' || window.location.port === '5500' || window.location.port === '5173') {
+      return 'http://localhost:8000';
+    }
+    // When served via Render or FastAPI directly, use current origin
+    if (window.location.origin && window.location.origin.startsWith('http')) {
+      return window.location.origin;
+    }
+    return 'http://localhost:8000';
+  }
+  const BACKEND_URL = getBackendUrl();
+
   // --- DOM Elements ---
   const topicInput = document.getElementById('topicInput');
   const frameworkSelect = document.getElementById('frameworkSelect');
@@ -1130,7 +1144,6 @@ Total Length: 500–600 words (≤ 650 max)
     setPipelineStep(1);
     await sleep(300);
 
-    const BACKEND_URL = "http://localhost:8000";
     let isBackendActive = false;
 
     // Check Backend Status
@@ -1323,9 +1336,9 @@ Total Length: 500–600 words (≤ 650 max)
   // Ping Python LangGraph Backend on Load
   (async function checkInitialBackend() {
     try {
-      const res = await fetch("http://localhost:8000/api/health");
+      const res = await fetch(`${BACKEND_URL}/api/health`);
       if (res.ok) {
-        engineBadge.textContent = "Python LangGraph :8000 (Active)";
+        engineBadge.textContent = "Python LangGraph (Active)";
         engineBadge.style.background = "rgba(139, 92, 246, 0.25)";
         engineBadge.style.color = "#c084fc";
         engineBadge.style.borderColor = "rgba(139, 92, 246, 0.5)";

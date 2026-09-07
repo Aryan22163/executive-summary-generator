@@ -334,6 +334,58 @@ The application includes 4 preloaded enterprise scenarios to test immediately:
 
 ---
 
+## ☁️ Deploying to Render (render.com)
+
+The project is architected to run on Render as a **single unified Web Service** (serving both the FastAPI LangGraph backend and the frontend UI) with **zero CORS configuration** needed, fitting seamlessly within Render's Free tier.
+
+### Method 1: Deploy via Render Blueprint (Recommended — 1 Click)
+
+1. Log into your [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** in the top right corner and select **Blueprint**.
+3. Connect your GitHub repository:
+   ```
+   https://github.com/Aryan22163/executive-summary-generator
+   ```
+4. Render will automatically detect the [`render.yaml`](render.yaml) specification:
+   - **Service Type**: Web Service
+   - **Runtime**: Python 3.12
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn backend.server:app --host 0.0.0.0 --port $PORT`
+5. *(Optional)* Add your `HUGGINGFACE_API_KEY` or `GEMINI_API_KEY` under Environment Variables.
+6. Click **Apply**. Your app will build and deploy with a live public URL (e.g., `https://executive-summary-generator.onrender.com`).
+
+---
+
+### Method 2: Manual Web Service Setup on Render
+
+If configuring manually without Blueprints:
+
+1. Click **New +** -> **Web Service** in your Render dashboard.
+2. Select your repository: `Aryan22163/executive-summary-generator`.
+3. Configure the following settings:
+   | Setting | Value |
+   |---|---|
+   | **Name** | `executive-summary-generator` |
+   | **Region** | `Oregon (US West)` or nearest |
+   | **Branch** | `main` |
+   | **Runtime** | `Python` |
+   | **Build Command** | `pip install -r requirements.txt` |
+   | **Start Command** | `uvicorn backend.server:app --host 0.0.0.0 --port $PORT` |
+   | **Instance Type** | `Free` |
+
+4. Under **Environment Variables**, add:
+   - `PYTHON_VERSION` = `3.12.0`
+   - *(Optional)* `HUGGINGFACE_API_KEY` = your HF token
+   - *(Optional)* `HUGGINGFACE_MODEL` = `meta-llama/Llama-3.3-70B-Instruct`
+   - *(Optional)* `GEMINI_API_KEY` = your Google Gemini key
+
+5. Click **Create Web Service**.
+
+> [!TIP]
+> **Zero Key Requirement**: The app includes a built-in deterministic fallback consultant engine that operates 100% offline without needing API keys. Adding API keys unlocks frontier open-source LLMs (Llama 3.3 70B, Mistral, Qwen, DeepSeek). Users can also enter API keys directly into the UI modal at runtime!
+
+---
+
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for more information.

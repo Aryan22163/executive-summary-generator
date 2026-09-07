@@ -16,7 +16,11 @@ from backend.models import (
 from backend.graph import consultant_graph
 from backend.prompts import EXECUTIVE_CONSULTANT_SYSTEM_PROMPT
 
+from fastapi.responses import FileResponse
+
 load_dotenv()
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 app = FastAPI(
     title="Executive Summary Generator API",
@@ -24,7 +28,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Enable CORS for local web clients
+# Enable CORS for cross-origin or local clients
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -34,7 +38,32 @@ app.add_middleware(
 )
 
 
-@app.get("/api/health")
+# --- Serve Frontend Web Application for Render Deployment ---
+@app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
+async def serve_index():
+    index_file = os.path.join(BASE_DIR, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    return {"message": "Executive Summary Generator API is running."}
+
+
+@app.api_route("/style.css", methods=["GET", "HEAD"], include_in_schema=False)
+async def serve_css():
+    css_file = os.path.join(BASE_DIR, "style.css")
+    if os.path.exists(css_file):
+        return FileResponse(css_file, media_type="text/css")
+    raise HTTPException(status_code=404, detail="style.css not found")
+
+
+@app.api_route("/app.js", methods=["GET", "HEAD"], include_in_schema=False)
+async def serve_js():
+    js_file = os.path.join(BASE_DIR, "app.js")
+    if os.path.exists(js_file):
+        return FileResponse(js_file, media_type="application/javascript")
+    raise HTTPException(status_code=404, detail="app.js not found")
+
+
+@app.api_route("/api/health", methods=["GET", "HEAD"])
 def health_check():
     """Returns backend status and LangGraph engine details."""
     return {
@@ -106,4 +135,5 @@ def generate_summary(req: GenerateRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("backend.server:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("backend.server:app", host="0.0.0.0", port=port, reload=False)
