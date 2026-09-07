@@ -1,4 +1,4 @@
-# 📝 Executive Summary Generator
+# 📝 AI CONSULTANT
 
 > **"Thinks like a McKinsey consultant, writes for the C-suite."**
 
