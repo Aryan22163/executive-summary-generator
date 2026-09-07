@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Summary Generator | Consultant-Grade C-Suite AI</title>
+  <meta name="description" content="Consultant-grade AI specialist trained to think and communicate like a senior strategy consultant. Transforms complex business inputs into concise, actionable executive summaries using McKinsey SCQA, BCG Pyramid Principle, and Bain frameworks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-background">
+    <div class="glow-sphere glow-sphere-1"></div>
+    <div class="glow-sphere glow-sphere-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-badge-icon">📝</div>
+        <div>
+          <div class="brand-title-row">
+            <h1 class="brand-title">Executive Summary Generator</h1>
+            <span class="pill-badge pill-purple">Consultant-Grade AI</span>
+            <span class="pill-badge pill-glass">McKinsey · BCG · Bain</span>
+          </div>
+          <p class="brand-vibe">Thinks like a McKinsey consultant, writes for the C-suite.</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btnOpenSystemPrompt" class="btn btn-ghost" title="Inspect Consultant Agent Specification">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Agent Spec
+        </button>
+        <button id="btnOpenApiModal" class="btn btn-ghost" title="Configure AI Backend & Engine">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Backend <span id="engineBadge" class="mini-pill">Python LangGraph</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4-Step Consulting Workflow Pipeline Stepper -->
+    <div class="stepper-bar">
+      <div class="step-item active" id="step1">
+        <span class="step-num">1</span>
+        <span class="step-label">Intake & Data Extraction</span>
+      </div>
+      <div class="step-separator"></div>
+      <div class="step-item" id="step2">
+        <span class="step-num">2</span>
+        <span class="step-label">Pyramid & Impact Ranking</span>
+      </div>
+      <div class="step-separator"></div>
+      <div class="step-item" id="step3">
+        <span class="step-num">3</span>
+        <span class="step-label">Executive Synthesis</span>
+      </div>
+      <div class="step-separator"></div>
+      <div class="step-item" id="step4">
+        <span class="step-num">4</span>
+        <span class="step-label">C-Suite QA & Word Budget</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- Left Column: Business Input Studio -->
+    <section class="panel input-panel" aria-label="Business Input Studio">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <span class="panel-icon">📂</span>
+          <h2 class="panel-title">Business Input Studio</h2>
+        </div>
+        <div class="sample-pills-wrap">
+          <span class="sample-label">Load Case:</span>
+          <div class="sample-buttons" role="group" aria-label="Preloaded cases">
+            <button class="sample-pill-btn" data-case="saas">SaaS Churn Crisis</button>
+            <button class="sample-pill-btn" data-case="cloud">Cloud Cost Overrun</button>
+            <button class="sample-pill-btn" data-case="supply">Supply Chain Shock</button>
+            <button class="sample-pill-btn" data-case="ma">HealthTech M&A</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-form-body">
+        <div class="field-row">
+          <div class="field-group flex-2">
+            <label for="topicInput" class="field-label">Executive Topic / Initiative Title</label>
+            <input type="text" id="topicInput" class="text-input" placeholder="e.g. Enterprise Cloud Cost Optimization & Infrastructure Modernization" value="B2B SaaS Net Retention Turnaround & Mid-Market Expansion">
+          </div>
+          <div class="field-group flex-1">
+            <label for="frameworkSelect" class="field-label">Consulting Framework</label>
+            <select id="frameworkSelect" class="select-input">
+              <option value="hybrid" selected>Executive Partner (SCQA + Pyramid + Bain)</option>
+              <option value="scqa">McKinsey SCQA (Narrative Clarity)</option>
+              <option value="pyramid">BCG Pyramid Principle (Top-Down)</option>
+              <option value="bain">Bain Action-Oriented (Execution Lead)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group content-field">
+          <div class="label-with-meta">
+            <label for="rawInputText" class="field-label">Raw Business Inputs / Data / Memos / Transcripts</label>
+            <span class="input-meta" id="inputStats">0 words · 0 numbers detected</span>
+          </div>
+          <textarea id="rawInputText" class="textarea-input" rows="12" placeholder="Paste complex operational memos, quarterly reviews, financial figures, customer analytics, or strategic assessments here..."></textarea>
+        </div>
+
+        <div class="consultant-rules-reminder">
+          <div class="reminder-header">
+            <span class="reminder-icon">⚖️</span>
+            <strong>C-Suite Rule Constraints:</strong>
+          </div>
+          <div class="rule-tags">
+            <span class="rule-tag">📏 500–600 words (≤ 650 max)</span>
+            <span class="rule-tag">📊 ≥1 quantified metric per finding</span>
+            <span class="rule-tag">🎯 Bold strategic implications</span>
+            <span class="rule-tag">👤 Owner + timeline + result on actions</span>
+            <span class="rule-tag">⏱️ &lt; 3.5 min reading time</span>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button id="btnGenerate" class="btn btn-primary">
+            <span class="btn-sparkle">✨</span>
+            <span id="generateBtnText">Synthesize Executive Summary</span>
+          </button>
+          <button id="btnRunStep4" class="btn btn-secondary" title="Execute Step 4: C-Suite QA Audit & Scorecard">
+            <span>🔍</span> Step 4: QA Audit
+          </button>
+          <button id="btnClear" class="btn btn-secondary" style="flex: 0.5;">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Executive Delivery & C-Suite Audit -->
+    <section class="panel output-panel" aria-label="Executive Output & Scorecard">
+      <div class="panel-header">
+        <!-- View Navigation Tabs -->
+        <div class="view-tabs" role="tablist">
+          <button class="view-tab active" data-view="memo" role="tab" aria-selected="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Executive Memo
+          </button>
+          <button class="view-tab" data-view="slide" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            Board Slide
+          </button>
+          <button class="view-tab" data-view="matrix" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            Action Matrix
+          </button>
+          <button class="view-tab" data-view="scorecard" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            C-Suite Scorecard
+          </button>
+        </div>
+
+        <!-- Quick Output Actions -->
+        <div class="output-quick-actions">
+          <button id="btnCopyMarkdown" class="icon-action-btn" title="Copy Raw Markdown">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Markdown</span>
+          </button>
+          <button id="btnCopyClean" class="icon-action-btn" title="Copy Formatted Memo for Email / Slack">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Email Memo</span>
+          </button>
+          <button id="btnPrint" class="icon-action-btn" title="Print or Save as Executive PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Print / PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Executive Metrics Strip -->
+      <div class="metrics-strip">
+        <div class="metric-badge" id="wordCountBadge">
+          <span class="metric-label">Word Count:</span>
+          <strong class="metric-val" id="valWordCount">0</strong>
+          <span class="metric-status status-gray" id="statusWordCount">Target 500–600</span>
+        </div>
+        <div class="metric-badge">
+          <span class="metric-label">Exec Read Time:</span>
+          <strong class="metric-val" id="valReadTime">0.0m</strong>
+          <span class="metric-status status-green">&lt; 3.0 min ✓</span>
+        </div>
+        <div class="metric-badge" id="quantifiedBadge">
+          <span class="metric-label">Data Density:</span>
+          <strong class="metric-val" id="valQuantDensity">0%</strong>
+          <span class="metric-status status-gray" id="statusQuantDensity">≥ 1 per finding</span>
+        </div>
+        <div class="metric-badge">
+          <span class="metric-label">C-Suite Compliance:</span>
+          <strong class="metric-val" id="valOverallScore">--</strong>
+          <span class="metric-status status-gray" id="statusOverallScore">Pending</span>
+        </div>
+      </div>
+
+      <!-- Content Views Container -->
+      <div class="output-content-container">
+        <!-- View 1: Executive Memo -->
+        <div id="viewMemo" class="view-panel active">
+          <div class="memo-paper" id="memoDocument">
+            <div class="memo-watermark">FOR C-SUITE & BOARD OF DIRECTORS</div>
+            <div class="memo-header-block">
+              <div class="memo-meta-col">
+                <div class="memo-meta-item"><span class="meta-tag">TO:</span> Executive Committee / Board of Directors</div>
+                <div class="memo-meta-item"><span class="meta-tag">FROM:</span> Senior Strategy Consultant (Executive Summary Specialist)</div>
+                <div class="memo-meta-item"><span class="meta-tag">DATE:</span> <span id="memoDate"></span></div>
+              </div>
+              <div class="memo-framework-col">
+                <span class="memo-framework-badge" id="memoFrameworkLabel">McKinsey SCQA · BCG Pyramid · Bain</span>
+                <span class="memo-classification">STRICT CONFIDENTIAL</span>
+              </div>
+            </div>
+
+            <div id="memoBody" class="memo-rendered-body">
+              <div class="empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>Executive Summary Awaiting Generation</h3>
+                <p>Select an enterprise case above or input your operational data, then click <strong>"Synthesize Executive Summary"</strong> to generate a consultant-grade C-suite brief.</p>
+                <div class="empty-case-pills">
+                  <button class="empty-case-btn" data-case="saas">Load SaaS Churn Case</button>
+                  <button class="empty-case-btn" data-case="cloud">Load Cloud Cost Case</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 2: Board Slide Preview -->
+        <div id="viewSlide" class="view-panel">
+          <div class="slide-aspect-box" id="boardSlide">
+            <div class="slide-inner">
+              <div class="slide-top-bar">
+                <div>
+                  <span class="slide-kicker">BOARD BRIEFING // STRATEGY & VALUE ACCELERATION</span>
+                  <h2 class="slide-title" id="slideTitle">Executive Summary: Initiative Title</h2>
+                </div>
+                <div class="slide-top-metrics">
+                  <div class="slide-kpi" id="slideKpi1">
+                    <span class="kpi-num">--</span>
+                    <span class="kpi-label">Financial Impact</span>
+                  </div>
+                  <div class="slide-kpi" id="slideKpi2">
+                    <span class="kpi-num">&lt; 30d</span>
+                    <span class="kpi-label">Decision Horizon</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide-grid">
+                <!-- Situation & Complication -->
+                <div class="slide-card card-situation">
+                  <div class="card-header">
+                    <span class="card-num">01</span>
+                    <h3>SITUATION & GAP</h3>
+                  </div>
+                  <div class="card-body" id="slideSituation">Awaiting summary synthesis...</div>
+                </div>
+
+                <!-- Strategic Findings -->
+                <div class="slide-card card-findings">
+                  <div class="card-header">
+                    <span class="card-num">02</span>
+                    <h3>KEY QUANTIFIED FINDINGS</h3>
+                  </div>
+                  <div class="card-body" id="slideFindings">Awaiting summary synthesis...</div>
+                </div>
+
+                <!-- Impact & Horizons -->
+                <div class="slide-card card-impact">
+                  <div class="card-header">
+                    <span class="card-num">03</span>
+                    <h3>BUSINESS IMPACT & RISK</h3>
+                  </div>
+                  <div class="card-body" id="slideImpact">Awaiting summary synthesis...</div>
+                </div>
+
+                <!-- Strategic Recommendations -->
+                <div class="slide-card card-recommendations">
+                  <div class="card-header">
+                    <span class="card-num">04</span>
+                    <h3>ACTIONABLE RECOMMENDATIONS</h3>
+                  </div>
+                  <div class="card-body" id="slideRecommendations">Awaiting summary synthesis...</div>
+                </div>
+              </div>
+
+              <div class="slide-footer-bar">
+                <div class="slide-decision-box" id="slideDecision">
+                  <strong>DECISION REQUIRED:</strong> Review and authorize priority initiatives.
+                </div>
+                <div class="slide-footer-tag">
+                  Executive Summary Generator · Strict Rule Compliance (500–600 words)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 3: Action Matrix -->
+        <div id="viewMatrix" class="view-panel">
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <h3>Action-Oriented Recommendation Matrix</h3>
+              <p>Derived using Bain's Action-Oriented Model with explicit owners, concrete schedules, and measurable targets.</p>
+            </div>
+            <div class="table-responsive">
+              <table class="action-table" id="actionTable">
+                <thead>
+                  <tr>
+                    <th>Priority</th>
+                    <th>Strategic Action</th>
+                    <th>Executive Owner</th>
+                    <th>Timeline</th>
+                    <th>Expected Result</th>
+                  </tr>
+                </thead>
+                <tbody id="actionTableBody">
+                  <tr>
+                    <td colspan="5" class="table-empty">Generate an executive summary to populate the Action Matrix.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="matrix-next-steps">
+              <h4>Immediate Next Steps (&le; 30-Day Horizon)</h4>
+              <div id="matrixNextStepsList" class="next-steps-list">
+                <p class="empty-hint">Awaiting synthesis...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 4: C-Suite Scorecard -->
+        <div id="viewScorecard" class="view-panel">
+          <div class="scorecard-container">
+            <div class="scorecard-hero">
+              <div class="score-circle" id="scoreOverallVal">0%</div>
+              <div class="score-meta">
+                <h3>Consulting Standards Audit</h3>
+                <p id="scoreSummaryText">Audit checks conformity to McKinsey SCQA, BCG quantification, and Bain action rules.</p>
+              </div>
+            </div>
+
+            <div class="audit-grid">
+              <div class="audit-item" id="auditWordCount">
+                <div class="audit-icon">📏</div>
+                <div class="audit-details">
+                  <h4>Target Word Budget (500–600 words)</h4>
+                  <p id="auditWordCountDesc">Strict limit: ≤ 650 words max.</p>
+                </div>
+                <span class="audit-status" id="auditWordCountStatus">Pending</span>
+              </div>
+
+              <div class="audit-item" id="auditQuant">
+                <div class="audit-icon">📊</div>
+                <div class="audit-details">
+                  <h4>Quantified Data Points</h4>
+                  <p id="auditQuantDesc">Every key finding must include ≥ 1 quantified or comparative data point.</p>
+                </div>
+                <span class="audit-status" id="auditQuantStatus">Pending</span>
+              </div>
+
+              <div class="audit-item" id="auditImplications">
+                <div class="audit-icon">🎯</div>
+                <div class="audit-details">
+                  <h4>Bold Strategic Implications</h4>
+                  <p id="auditImplicationsDesc">Findings must explicitly bold the strategic implication for the business.</p>
+                </div>
+                <span class="audit-status" id="auditImplicationsStatus">Pending</span>
+              </div>
+
+              <div class="audit-item" id="auditOwnership">
+                <div class="audit-icon">👤</div>
+                <div class="audit-details">
+                  <h4>Recommendation Ownership & Timelines</h4>
+                  <p id="auditOwnershipDesc">Actions labeled [Critical/High/Medium] with Owner + Timeline + Expected Result.</p>
+                </div>
+                <span class="audit-status" id="auditOwnershipStatus">Pending</span>
+              </div>
+
+              <div class="audit-item" id="auditNextSteps">
+                <div class="audit-icon">⚡</div>
+                <div class="audit-details">
+                  <h4>Next Steps & Decision Deadline</h4>
+                  <p id="auditNextStepsDesc">2–3 immediate actions (≤ 30 days) plus an explicit Decision Point with date.</p>
+                </div>
+                <span class="audit-status" id="auditNextStepsStatus">Pending</span>
+              </div>
+
+              <div class="audit-item" id="auditReadingTime">
+                <div class="audit-icon">⏱️</div>
+                <div class="audit-details">
+                  <h4>Executive Reading Speed (&lt; 3 Minutes)</h4>
+                  <p id="auditReadingTimeDesc">Enables rapid decision-making for C-suite and board members.</p>
+                </div>
+                <span class="audit-status" id="auditReadingTimeStatus">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Modal: System Prompt & Agent Personality -->
+  <div id="modalSystemPrompt" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalPromptTitle">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">🧠</span>
+          <h3 id="modalPromptTitle">Executive Summary Generator — Agent Personality & Prompt</h3>
+        </div>
+        <button class="modal-close-btn" id="btnClosePromptModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="prompt-meta-grid">
+          <div class="meta-cell"><strong>Name:</strong> Executive Summary Generator</div>
+          <div class="meta-cell"><strong>Role:</strong> Senior Strategy Consultant</div>
+          <div class="meta-cell"><strong>Color:</strong> Purple (`#8B5CF6`)</div>
+          <div class="meta-cell"><strong>Emoji:</strong> 📝</div>
+          <div class="meta-cell"><strong>Target Length:</strong> 500–600 words (≤ 650 max)</div>
+          <div class="meta-cell"><strong>Vibe:</strong> Thinks like a McKinsey consultant, writes for the C-suite</div>
+        </div>
+        <div class="code-block-wrap">
+          <div class="code-header">
+            <span>CORE SYSTEM PROMPT (Markdown)</span>
+            <button id="btnCopyPrompt" class="btn btn-xs btn-ghost">Copy Prompt</button>
+          </div>
+          <pre><code id="fullPromptCode"></code></pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnClosePromptModal2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: AI Engine & API Key Configuration -->
+  <div id="modalApiConfig" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalApiTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">⚡</span>
+          <h3 id="modalApiTitle">AI Engine Configuration</h3>
+        </div>
+        <button class="modal-close-btn" id="btnCloseApiModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">
+          This generator includes a high-fidelity <strong>Built-in Enterprise Synthesis Engine</strong> that runs instantly without any API keys.
+          Optionally, you can connect your Google Gemini API key to run frontier live LLM synthesis with the exact consultant prompt.
+        </p>
+
+        <div class="field-group">
+          <label class="field-label">Engine Mode</label>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" name="engineMode" value="native" checked>
+              <div class="radio-content">
+                <strong>Python LangGraph Engine (Built-in Heuristics & Pipeline)</strong>
+                <span>Deterministic rule-compliant synthesis using SCQA, Pyramid, and Bain heuristics on LangGraph.</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="engineMode" value="huggingface">
+              <div class="radio-content">
+                <strong>Hugging Face Inference (Open Source LLMs)</strong>
+                <span>Connect your Hugging Face API Token (Free/Pro) to run open-source frontier models like Llama 3.3, Mistral, Qwen, or DeepSeek.</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="engineMode" value="gemini">
+              <div class="radio-content">
+                <strong>Google Gemini API (Gemini 1.5 / 2.0)</strong>
+                <span>Connect your Google Gemini API key for frontier generative synthesis.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group" id="hfKeyGroup" style="display: none;">
+          <label for="hfApiKey" class="field-label">Hugging Face API Token (Bearer Token)</label>
+          <input type="password" id="hfApiKey" class="text-input" placeholder="hf_xxxxxxxxxxxxxxxxxxxxxxxxx">
+          <small class="field-hint">Get a free token from <a href="https://huggingface.co/settings/tokens" target="_blank" style="color:var(--primary-400);">huggingface.co/settings/tokens</a>. Stored locally in your browser or .env.</small>
+
+          <label for="hfModelSelect" class="field-label" style="margin-top: 10px;">Open Source Model Selection</label>
+          <select id="hfModelSelect" class="select-input">
+            <option value="meta-llama/Llama-3.3-70B-Instruct" selected>meta-llama/Llama-3.3-70B-Instruct (Recommended)</option>
+            <option value="meta-llama/Meta-Llama-3-8B-Instruct">meta-llama/Meta-Llama-3-8B-Instruct (Ultra Fast)</option>
+            <option value="mistralai/Mistral-7B-Instruct-v0.3">mistralai/Mistral-7B-Instruct-v0.3</option>
+            <option value="Qwen/Qwen2.5-72B-Instruct">Qwen/Qwen2.5-72B-Instruct</option>
+            <option value="deepseek-ai/DeepSeek-R1-Distill-Qwen-32B">deepseek-ai/DeepSeek-R1-Distill-Qwen-32B</option>
+          </select>
+        </div>
+
+        <div class="field-group" id="geminiKeyGroup" style="display: none;">
+          <label for="geminiApiKey" class="field-label">Google Gemini API Key</label>
+          <input type="password" id="geminiApiKey" class="text-input" placeholder="AIzaSy...">
+          <small class="field-hint">Your API key is stored only in your browser's local memory (localStorage) and never transmitted elsewhere.</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelApi">Cancel</button>
+        <button class="btn btn-primary" id="btnSaveApi">Save Configuration</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
