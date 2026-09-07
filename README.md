@@ -13,6 +13,8 @@ A consultant-grade AI system engineered to transform messy operational reports, 
 
 ---
 
+## live link - https://executive-summary-generator-vvlm.onrender.com/
+
 ## 📌 Table of Contents
 
 - [What is Executive Summary Generator?](#-what-is-executive-summary-generator)
